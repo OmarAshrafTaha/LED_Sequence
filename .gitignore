@@ -1,2 +1,4 @@
 *.cproj
 *.pptx
+/Debug
+*.xml
