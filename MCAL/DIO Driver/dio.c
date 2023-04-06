@@ -7,7 +7,7 @@
 #include "dio.h"
 
 
-void DIO_init(uint8_t pinNumber, uint8_t portNumber, pin_dir direction)  //initialize dio direction
+err_state DIO_init(uint8_t pinNumber, uint8_t portNumber, pin_dir direction)  //initialize dio direction
 {
 	switch(portNumber)
 	{
@@ -23,6 +23,7 @@ void DIO_init(uint8_t pinNumber, uint8_t portNumber, pin_dir direction)  //initi
 			else
 			{
 				// Error Handling
+				return FAIL;
 			}
 			break;
 			
@@ -38,6 +39,7 @@ void DIO_init(uint8_t pinNumber, uint8_t portNumber, pin_dir direction)  //initi
 			else
 			{
 				// Error Handling
+				return FAIL;
 			}
 			break;
 			
@@ -53,6 +55,7 @@ void DIO_init(uint8_t pinNumber, uint8_t portNumber, pin_dir direction)  //initi
 			else
 			{
 				// Error Handling
+				return FAIL;
 			}
 			break;
 			
@@ -68,12 +71,17 @@ void DIO_init(uint8_t pinNumber, uint8_t portNumber, pin_dir direction)  //initi
 			else
 			{
 				// Error Handling
+				return FAIL;
 			}
-			break;		
+			break;
+			
+		default:
+			return FAIL;		
 	}
+	return SUCCESS;
 }
 
-void DIO_write(uint8_t pinNumber, uint8_t portNumber, pin_state value)   //write data to dio
+err_state DIO_write(uint8_t pinNumber, uint8_t portNumber, pin_state value)   //write data to dio
 {	
 	switch(portNumber)
 	{
@@ -89,6 +97,7 @@ void DIO_write(uint8_t pinNumber, uint8_t portNumber, pin_state value)   //write
 		else
 		{
 			// Error Handling
+			return FAIL;
 		}
 		break;
 		
@@ -104,6 +113,7 @@ void DIO_write(uint8_t pinNumber, uint8_t portNumber, pin_state value)   //write
 		else
 		{
 			// Error Handling
+			return FAIL;
 		}
 		break;
 		
@@ -119,6 +129,7 @@ void DIO_write(uint8_t pinNumber, uint8_t portNumber, pin_state value)   //write
 		else
 		{
 			// Error Handling
+			return FAIL;
 		}
 		break;
 		
@@ -134,12 +145,17 @@ void DIO_write(uint8_t pinNumber, uint8_t portNumber, pin_state value)   //write
 		else
 		{
 			// Error Handling
+			return FAIL;
 		}
 		break;
+		
+		default:
+			return FAIL;
 	}
+	return SUCCESS;
 }
 
-void DIO_toggle(uint8_t pinNumber, uint8_t portNumber)					 //toggle dio
+err_state DIO_toggle(uint8_t pinNumber, uint8_t portNumber)					 //toggle dio
 {
 	switch(portNumber)
 	{
@@ -157,11 +173,15 @@ void DIO_toggle(uint8_t pinNumber, uint8_t portNumber)					 //toggle dio
 			
 		case PORT_D:
 			Toggle_Bit(pinNumber,PORTD);
-			break;			
+			break;
+		default:
+			//Error handling
+			return FAIL;						
 	}
+	return SUCCESS;
 }
 
-void DIO_read(uint8_t pinNumber, uint8_t portNumber, pin_state *value)   //read dio
+err_state DIO_read(uint8_t pinNumber, uint8_t portNumber, pin_state *value)   //read dio
 {
 		switch(portNumber)
 		{
@@ -183,7 +203,8 @@ void DIO_read(uint8_t pinNumber, uint8_t portNumber, pin_state *value)   //read 
 			
 			default:
 				//Error handling
-				break;
+				return FAIL;
 			
 		}
+		return SUCCESS;
 }

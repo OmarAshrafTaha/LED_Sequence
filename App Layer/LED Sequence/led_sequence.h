@@ -15,6 +15,6 @@
 #define Button_1_Port PORT_C
 #define Button_1_Pin  6
 
-void LED_Sequence();
+err_state LED_Sequence();
 
 #endif /* LED_SEQUENCE_H_ */

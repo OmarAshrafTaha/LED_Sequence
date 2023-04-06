@@ -7,7 +7,7 @@
 
 #include "led_sequence.h"
 
-void LED_Sequence()
+err_state LED_Sequence()
 {	int count = 0;
 	pin_state button_1_State=0;
 	pin_state old_state = 0;
@@ -69,4 +69,5 @@ void LED_Sequence()
 			
 			old_state=button_1_State;
 		}
+	return FAIL;
 }

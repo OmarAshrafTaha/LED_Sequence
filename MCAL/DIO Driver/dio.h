@@ -18,10 +18,10 @@
 #define PORT_C 'C'
 #define PORT_D 'D'
 
-void DIO_init(uint8_t pinNumber, uint8_t portNumber, pin_dir direction);   //initialize dio direction
-void DIO_write(uint8_t pinNumber, uint8_t portNumber, pin_state value);  //write data to dio 
-void DIO_toggle(uint8_t pinNumber, uint8_t portNumber); //toggle dio 
-void DIO_read(uint8_t pinNumber, uint8_t portNumber, uint8_t *value);   //read dio 
+err_state DIO_init(uint8_t pinNumber, uint8_t portNumber, pin_dir direction);   //initialize dio direction
+err_state DIO_write(uint8_t pinNumber, uint8_t portNumber, pin_state value);  //write data to dio 
+err_state DIO_toggle(uint8_t pinNumber, uint8_t portNumber); //toggle dio 
+err_state DIO_read(uint8_t pinNumber, uint8_t portNumber, uint8_t *value);   //read dio 
 
 
 

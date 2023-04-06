@@ -6,11 +6,13 @@
  */ 
 #include "button.h"
 
-void BUTTON_init(uint8_t pinNumber, uint8_t portNumber)
+err_state BUTTON_init(uint8_t pinNumber, uint8_t portNumber)
 {
 	DIO_init(pinNumber,portNumber,INPUT);
+	return SUCCESS;
 }
-void BUTTON_read(uint8_t pinNumber, uint8_t portNumber, pin_state *value)
+err_state BUTTON_read(uint8_t pinNumber, uint8_t portNumber, pin_state *value)
 {
 	DIO_read(pinNumber,portNumber,value);
+	return SUCCESS;
 }

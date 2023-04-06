@@ -10,7 +10,10 @@
 #define TYPES_H_
 
 typedef unsigned char uint8_t;
-
+typedef enum err_state
+{
+	SUCCESS,FAIL
+}err_state;
 typedef enum pin_dir
 {
 	INPUT,OUTPUT

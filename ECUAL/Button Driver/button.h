@@ -8,8 +8,8 @@
 
 #ifndef BUTTON_H_
 #define BUTTON_H_
-void BUTTON_init(uint8_t pinNumber, uint8_t portNumber);
-void BUTTON_read(uint8_t pinNumber, uint8_t portNumber, uint8_t *value);
+err_state BUTTON_init(uint8_t pinNumber, uint8_t portNumber);
+err_state BUTTON_read(uint8_t pinNumber, uint8_t portNumber, uint8_t *value);
 
 
 

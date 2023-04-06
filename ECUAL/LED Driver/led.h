@@ -10,10 +10,10 @@
 #define LED_H_
 #include "../../MCAL/DIO Driver/dio.h"
 
-void LED_init(uint8_t ledPin, uint8_t ledPort);
-void LED_on(uint8_t ledPin, uint8_t ledPort);
-void LED_off(uint8_t ledPin, uint8_t ledPort);
-void LED_toggle(uint8_t ledPin, uint8_t ledPort);
+err_state LED_init(uint8_t ledPin, uint8_t ledPort);
+err_state LED_on(uint8_t ledPin, uint8_t ledPort);
+err_state LED_off(uint8_t ledPin, uint8_t ledPort);
+err_state LED_toggle(uint8_t ledPin, uint8_t ledPort);
 
 
 
