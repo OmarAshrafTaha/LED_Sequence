@@ -2,3 +2,5 @@
 *.pptx
 /Debug
 *.xml
+/Proteus/*.pdsbak
+/Proteus/*.pdsprj.*
