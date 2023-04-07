@@ -12,8 +12,8 @@
 #include "../../ECUAL/LED Driver/led.h"
 #include "../../ECUAL/Button Driver/button.h"
 
-#define Button_1_Port PORT_C
-#define Button_1_Pin  6
+#define Button_1_Port PORT_D
+#define Button_1_Pin  2
 
 err_state LED_Sequence();
 
