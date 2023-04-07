@@ -6,11 +6,13 @@
  */ 
 
 #include "App Layer/LED Sequence/led_sequence.h"
+#include "App Layer/LED Sequence v2.0/led_sequence_2.h"
 
 int main(void)
 {
 
     /* Replace with your application code */
-	LED_Sequence();
+	//LED_Sequence();
+	LED_Sequence_2();
 
 }

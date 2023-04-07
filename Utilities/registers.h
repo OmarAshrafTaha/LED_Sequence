@@ -36,6 +36,14 @@
 #define DDRD  *((volatile uint8_t*)0x31)
 #define PIND  *((volatile uint8_t*)0x30)
 
+/************************************************************************/
+/* External Interrupts Registers                                        */
+/************************************************************************/
+#define SREG  *((volatile uint8_t*)0x5F)
+#define GICR  *((volatile uint8_t*)0x5B)
+#define GIFR  *((volatile uint8_t*)0x5A)
+#define MCUCR *((volatile uint8_t*)0x55)
+
 
 
 
