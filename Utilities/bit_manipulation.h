@@ -13,6 +13,10 @@
 #define Read_Bit(pinNumber,portNumber)		(((portNumber) & (1<<pinNumber))>>pinNumber)
 #define Toggle_Bit(pinNumber,portNumber)	((portNumber)^=(1<<pinNumber))
 
+#define Set_mask(mask,portNumber)			((portNumber) |= mask)
+#define Clear_mask(mask,portNumber)			((portNumber) &= ~(mask))
+#define Toggle_mask(mask,portNumber)	    ((portNumber)^= (mask))
+
 
 
 

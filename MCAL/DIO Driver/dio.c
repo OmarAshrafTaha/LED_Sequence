@@ -6,7 +6,12 @@
  */ 
 #include "dio.h"
 
-
+/*******************************************************************************************/
+/*@Description: Initialize a pin as output or input depending on the direction passed      */
+/*@param pinNumber		=>	pin number													   */
+/*@param portNumber		=>  port number													   */
+/*@param direction      =>  pin direction										    	   */
+/*******************************************************************************************/
 err_state DIO_init(uint8_t pinNumber, uint8_t portNumber, pin_dir direction)  //initialize dio direction
 {
 	switch(portNumber)
@@ -81,6 +86,13 @@ err_state DIO_init(uint8_t pinNumber, uint8_t portNumber, pin_dir direction)  //
 	return SUCCESS;
 }
 
+
+/*******************************************************************************************/
+/*@Description: Sets a pin as HIGH or LOW depending on the state passed                    */
+/*@param pinNumber		=>	pin number													   */
+/*@param portNumber		=>  port number													   */
+/*@param value	        =>  pin desired state											   */
+/*******************************************************************************************/
 err_state DIO_write(uint8_t pinNumber, uint8_t portNumber, pin_state value)   //write data to dio
 {	
 	switch(portNumber)
@@ -155,6 +167,91 @@ err_state DIO_write(uint8_t pinNumber, uint8_t portNumber, pin_state value)   //
 	return SUCCESS;
 }
 
+/*******************************************************************************************/
+/*@Description: Sets an array of pins as HIGH or LOW depending on the state passed         */
+/*@param mask			=>	mask														   */
+/*@param portNumber		=>  port number													   */
+/*@param value	        =>  mask desired state											   */
+/*******************************************************************************************/
+err_state DIO_array_write(uint8_t mask, uint8_t portNumber, pin_state value)   //write data to dio
+{
+	switch(portNumber)
+	{
+		case PORT_A:
+		if(value == LOW)
+		{
+			Clear_mask(mask,PORTA);
+		}
+		else if(value == HIGH)
+		{
+			Set_mask(mask,PORTA);
+		}
+		else
+		{
+			// Error Handling
+			return FAIL;
+		}
+		break;
+		
+		case PORT_B:
+		if(value == LOW)
+		{
+			Clear_mask(mask,PORTB);
+		}
+		else if(value == HIGH)
+		{
+			Set_mask(mask,PORTB);
+		}
+		else
+		{
+			// Error Handling
+			return FAIL;
+		}
+		break;
+		
+		case PORT_C:
+		if(value == LOW)
+		{
+			Clear_mask(mask,PORTC);
+		}
+		else if(value == HIGH)
+		{
+			Set_mask(mask,PORTC);
+		}
+		else
+		{
+			// Error Handling
+			return FAIL;
+		}
+		break;
+		
+		case PORT_D:
+		if(value == LOW)
+		{
+			Clear_mask(mask,PORTD);
+		}
+		else if(value == HIGH)
+		{
+			Set_mask(mask,PORTD);
+		}
+		else
+		{
+			// Error Handling
+			return FAIL;
+		}
+		break;
+		
+		default:
+		return FAIL;
+	}
+	return SUCCESS;
+}
+
+/*******************************************************************************************/
+/*@Description: Toggles a pin state									                       */
+/*@param pinNumber		=>	pin number													   */
+/*@param portNumber		=>  port number													   */
+/*******************************************************************************************/
 err_state DIO_toggle(uint8_t pinNumber, uint8_t portNumber)					 //toggle dio
 {
 	switch(portNumber)
@@ -181,6 +278,12 @@ err_state DIO_toggle(uint8_t pinNumber, uint8_t portNumber)					 //toggle dio
 	return SUCCESS;
 }
 
+/*******************************************************************************************/
+/*@Description: Reads a pin state									                       */
+/*@param pinNumber		=>	pin number													   */
+/*@param portNumber		=>  port number													   */
+/*@param *value			=>  refrence to store the read value in							   */
+/*******************************************************************************************/
 err_state DIO_read(uint8_t pinNumber, uint8_t portNumber, pin_state *value)   //read dio
 {
 		switch(portNumber)

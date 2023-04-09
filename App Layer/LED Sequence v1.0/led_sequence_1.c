@@ -5,7 +5,7 @@
  *  Author: Omar Taha
  */ 
 
-#include "led_sequence.h"
+#include "led_sequence_1.h"
 
 err_state LED_Sequence()
 {	int count = 0;

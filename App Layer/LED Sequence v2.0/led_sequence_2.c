@@ -80,11 +80,11 @@ err_state LED_Sequence_2()
 	return FAIL;
 }
 
-ISR(EXT_INT_0)
-{
-	count++;
-	if(count == 9)
-	{
-		count = 1;
-	}
-}
+// ISR(EXT_INT_0)
+// 	{
+// 		count++;
+// 		if(count == 9)
+// 		{
+// 			count = 1;
+// 		}
+// }

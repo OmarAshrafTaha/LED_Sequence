@@ -4,3 +4,4 @@
 *.xml
 /Proteus/*.pdsbak
 /Proteus/*.pdsprj.*
+.vs

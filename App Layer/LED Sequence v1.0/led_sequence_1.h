@@ -6,8 +6,8 @@
  */ 
 
 
-#ifndef LED_SEQUENCE_H_
-#define LED_SEQUENCE_H_
+#ifndef LED_SEQUENCE_1_H_
+#define LED_SEQUENCE_1_H_
 #include "../../MCAL/DIO Driver/dio.h"
 #include "../../ECUAL/LED Driver/led.h"
 #include "../../ECUAL/Button Driver/button.h"
@@ -17,4 +17,4 @@
 
 err_state LED_Sequence();
 
-#endif /* LED_SEQUENCE_H_ */
+#endif /* LED_SEQUENCE_1_H_ */

@@ -44,6 +44,14 @@
 #define GIFR  *((volatile uint8_t*)0x5A)
 #define MCUCR *((volatile uint8_t*)0x55)
 
+/************************************************************************/
+/* Timers Registers                                                     */
+/************************************************************************/
+//Timer 0 registers (8-bit register)
+#define TCCR0 *((volatile uint8_t*)0x53)
+#define TCNT0 *((volatile uint8_t*)0x52)
+#define TIFR  *((volatile uint8_t*)0x58)
+#define TIMSK *((volatile uint8_t*)0x59)
 
 
 
